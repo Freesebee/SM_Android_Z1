@@ -28,13 +28,14 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        question.setText(questions[0].getId());
         setContentView(R.layout.activity_main);
 
         buttonTrue = findViewById(R.id.button_true);
         buttonFalse = findViewById(R.id.button_false);
         buttonNext = findViewById(R.id.button_next);
         question = findViewById(R.id.question_text_view);
+
+        question.setText(questions[0].getId());
 
         buttonTrue.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity
             resultMessageId = R.string.answer_wrong;
         }
 
-        Toast.makeText(this, resultMessageId, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, resultMessageId, Toast.LENGTH_LONG).show();
     }
 
     private void setNextQuestion() {
