@@ -60,18 +60,40 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void checkAnswer(boolean userAnswer) {
-        int resultMessageId = 0;
 
         if (userAnswer == questions[index].isAnswer()) {
-            resultMessageId = R.string.answer_correct;
+            Toast.makeText(this, R.string.answer_wrong, Toast.LENGTH_SHORT).show();
         } else {
-            resultMessageId = R.string.answer_wrong;
+            Toast.makeText(this, R.string.answer_wrong, Toast.LENGTH_SHORT).show();
         }
-
-        Toast.makeText(this, resultMessageId, Toast.LENGTH_LONG).show();
     }
 
     private void setNextQuestion() {
         question.setText(questions[++index % questions.length].getId());
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }
