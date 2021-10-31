@@ -4,23 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import lombok.ToString;
-
 public class MainActivity extends AppCompatActivity {
 
     private static final String QUIZ_TAG = "MainActivity";
+    private static final String KEY_CURRENT_INDEX = "currentIndex";
 
     private Button buttonTrue;
     private Button buttonFalse;
     private Button buttonNext;
     private TextView question;
 
-    private Question[] questions = new Question[] {
+    private final Question[] questions = new Question[] {
             new Question(R.string.q_uciski, true),
             new Question(R.string.q_pozycja, true),
             new Question(R.string.q_krwotok, false),
@@ -28,12 +26,13 @@ public class MainActivity extends AppCompatActivity {
             new Question(R.string.q_cialo, false)
     };
 
-    private int index = 0;
+    private int currentIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
         Log.d(QUIZ_TAG, "Została wywołana metoda cyklu życia: onCreate");
 
         setContentView(R.layout.activity_main);
@@ -43,41 +42,19 @@ public class MainActivity extends AppCompatActivity {
         buttonNext = findViewById(R.id.button_next);
         question = findViewById(R.id.question_text_view);
 
-        question.setText(questions[0].getId());
-
-        buttonTrue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                checkAnswer( true);
-            }
-        });
-
-        buttonFalse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                checkAnswer(false);
-            }
-        });
-
-        buttonNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setNextQuestion();
-            }
-        });
-    }
-
-    private void checkAnswer(boolean userAnswer) {
-
-        if (userAnswer == questions[index].isAnswer()) {
-            Toast.makeText(this, R.string.answer_wrong, Toast.LENGTH_SHORT).show();
+        if (savedInstanceState != null) {
+            currentIndex = savedInstanceState.getInt(KEY_CURRENT_INDEX);
         } else {
-            Toast.makeText(this, R.string.answer_wrong, Toast.LENGTH_SHORT).show();
+            currentIndex = 0;
         }
-    }
 
-    private void setNextQuestion() {
-        question.setText(questions[++index % questions.length].getId());
+        question.setText(questions[currentIndex].getId());
+
+        buttonTrue.setOnClickListener(v -> checkAnswer( true));
+
+        buttonFalse.setOnClickListener(v -> checkAnswer(false));
+
+        buttonNext.setOnClickListener(v -> setNextQuestion());
     }
 
     @Override
@@ -108,5 +85,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.d(QUIZ_TAG, "Została wywołana metoda cyklu życia: onDestroy");
+    }
+
+
+    private void checkAnswer(boolean userAnswer) {
+
+        if (userAnswer == questions[currentIndex].isAnswer()) {
+            Toast.makeText(this, "Poprawna odpowiedź!", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, R.string.answer_wrong, Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void setNextQuestion() {
+        question.setText(questions[++currentIndex % questions.length].getId());
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.d(QUIZ_TAG, "Została wywołana metoda: onSaveInstanceState");
+        outState.putInt(KEY_CURRENT_INDEX, currentIndex);
     }
 }
