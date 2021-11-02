@@ -2,6 +2,7 @@ package com.example.quiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -12,10 +13,13 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String QUIZ_TAG = "MainActivity";
     private static final String KEY_CURRENT_INDEX = "currentIndex";
+    public static final String KEY_EXTRA_ANSWER = "correctAnswer";
 
     private Button buttonTrue;
     private Button buttonFalse;
     private Button buttonNext;
+    private Button buttonHint;
+
     private TextView question;
 
     private final Question[] questions = new Question[] {
@@ -40,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         buttonTrue = findViewById(R.id.button_true);
         buttonFalse = findViewById(R.id.button_false);
         buttonNext = findViewById(R.id.button_next);
+        buttonHint = findViewById(R.id.button_hint);
         question = findViewById(R.id.question_text_view);
 
         if (savedInstanceState != null) {
@@ -55,6 +60,13 @@ public class MainActivity extends AppCompatActivity {
         buttonFalse.setOnClickListener(v -> checkAnswer(false));
 
         buttonNext.setOnClickListener(v -> setNextQuestion());
+
+        buttonHint.setOnClickListener((v) -> {
+            Intent intent = new Intent(MainActivity.this, PromptActivity.class);
+            boolean correctAnswer = questions[currentIndex].isAnswer();
+            intent.putExtra(KEY_EXTRA_ANSWER, correctAnswer);
+            startActivity(intent);
+        });
     }
 
     @Override
@@ -86,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         Log.d(QUIZ_TAG, "Została wywołana metoda cyklu życia: onDestroy");
     }
-
 
     private void checkAnswer(boolean userAnswer) {
 

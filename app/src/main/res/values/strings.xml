@@ -3,8 +3,10 @@
     <string name="button_true">Prawda</string>
     <string name="button_false">Fałsz</string>
     <string name="button_next">Następny</string>
+    <string name="button_hint">Podpowiedź</string>
 
-    <string name="q_uciski">Czy podczas wykonywania RKO na osobie dorosłej poprawna liczba uciśnięć wynosi 120 na minutę?</string>>
+    <string name="q_uciski">Czy podczas wykonywania RKO na osobie dorosłej poprawna liczba uciśnięć wynosi 120 na minutę?</string>
+    >
     <string name="q_pozycja">Czy poszkodowanego nieprzytopmnego oddychającego należy ułożyć w pozycji bocznej bezpiecznej?</string>
     <string name="q_krwotok">Czy podczas krwotoku z nosa należy odchylić głowę do tyłu?</string>
     <string name="q_topielec">Czy u topielca należy wykonać 5 wdechów ratowniczych przed rozpoczęciem RKO?</string>
@@ -12,4 +14,8 @@
 
     <string name="answer_correct">Poprawna odpowiedź!</string>
     <string name="answer_wrong">Błędna odpowiedź...</string>
+
+    <string name="q_show_answer">Czy na pewno chcesz zobaczyć odpowiedź?</string>
+    <string name="button_show_answer">Pokaż odpowiedź</string>
+
 </resources>

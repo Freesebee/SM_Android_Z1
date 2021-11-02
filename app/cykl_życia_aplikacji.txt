@@ -1,33 +1,67 @@
 • Po pierwszym uruchomieniu aplikacji
-2021-11-02 10:12:34.295 8243-8243/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onCreate
-2021-11-02 10:12:35.098 8243-8243/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onStart
-2021-11-02 10:12:35.105 8243-8243/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onResume
+2021-11-02 20:53:43.792 11646-11646/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onCreate
+2021-11-02 20:53:45.839 11646-11646/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onStart
+2021-11-02 20:53:45.862 11646-11646/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onResume
 
 • Po wciśnięciu przycisku Cofnij
-2021-11-02 10:12:46.874 8243-8243/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onPause
-2021-11-02 10:12:48.117 8243-8243/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onStop
-2021-11-02 10:12:48.157 8243-8243/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onDestroy
+2021-11-02 20:55:48.911 11646-11646/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onPause
+2021-11-02 20:55:50.017 11646-11646/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onStop
+2021-11-02 20:55:50.025 11646-11646/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onDestroy
 
 • Po ponownym uruchomieniu aplikacji
-2021-11-02 10:13:01.771 8243-8243/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onCreate
-2021-11-02 10:13:01.952 8243-8243/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onStart
-2021-11-02 10:13:01.954 8243-8243/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onResume
+2021-11-02 20:56:00.570 11646-11646/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onCreate
+2021-11-02 20:56:00.964 11646-11646/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onStart
+2021-11-02 20:56:00.973 11646-11646/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onResume
 
 • Po wciśnięciu przycisku ekranu głównego Home
-2021-11-02 10:13:12.193 8243-8243/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onPause
-2021-11-02 10:13:13.876 8243-8243/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onStop
-2021-11-02 10:13:13.905 8243-8243/com.example.quiz D/MainActivity: Została wywołana metoda: onSaveInstanceState
+2021-11-02 20:56:10.814 11646-11646/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onPause
+2021-11-02 20:56:12.116 11646-11646/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onStop
 
 • Po powrocie do aplikacji z listy ostatnio używanych aplikacji
-2021-11-02 10:13:23.220 8243-8243/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onStart
-2021-11-02 10:13:23.236 8243-8243/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onResume
+2021-11-02 20:56:41.434 11646-11646/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onStart
+2021-11-02 20:56:41.438 11646-11646/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onResume
 
 • Po przejściu do drugiego pytania i obrót ekranu
-2021-11-02 10:17:24.778 9096-9096/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onPause
-2021-11-02 10:17:24.783 9096-9096/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onStop
-2021-11-02 10:17:24.785 9096-9096/com.example.quiz D/MainActivity: Została wywołana metoda: onSaveInstanceState
-2021-11-02 10:17:24.786 9096-9096/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onDestroy
-2021-11-02 10:17:24.842 9096-9096/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onCreate
-2021-11-02 10:17:24.909 9096-9096/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onStart
-2021-11-02 10:17:24.912 9096-9096/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onResume
-// po obrocie ekranu wyświetlane było dalej to samo pytanie
+2021-11-02 20:58:25.266 11646-11646/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onPause
+2021-11-02 20:58:25.272 11646-11646/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onStop
+2021-11-02 20:58:25.282 11646-11646/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onDestroy
+2021-11-02 20:58:25.400 11646-11646/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onCreate
+2021-11-02 20:58:25.755 11646-11646/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onStart
+2021-11-02 20:58:25.761 11646-11646/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onResume
+
+// po przejściu do 2 pytania i po obróceniu ekranu wyświetlone zostało ponownie 1 pytanie
+
+• Po dodaniu odczytywania stanu i po pierwszym uruchomieniu aplikacji
+2021-11-02 21:06:06.421 12167-12167/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onCreate
+2021-11-02 21:06:06.564 12167-12167/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onStart
+2021-11-02 21:06:06.565 12167-12167/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onResume
+
+• Po wciśnięciu przycisku Cofnij
+2021-11-02 21:06:36.167 12167-12167/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onPause
+2021-11-02 21:06:36.847 12167-12167/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onStop
+2021-11-02 21:06:36.849 12167-12167/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onDestroy
+
+• Po ponownym uruchomieniu aplikacji
+2021-11-02 21:06:48.106 12167-12167/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onCreate
+2021-11-02 21:06:48.143 12167-12167/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onStart
+2021-11-02 21:06:48.143 12167-12167/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onResume
+
+• Po wciśnięciu przycisku ekranu głównego Home
+2021-11-02 21:06:58.898 12167-12167/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onPause
+2021-11-02 21:06:59.874 12167-12167/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onStop
+2021-11-02 21:06:59.877 12167-12167/com.example.quiz D/MainActivity: Została wywołana metoda: onSaveInstanceState
+
+• Po powrocie do aplikacji z listy ostatnio używanych aplikacji
+2021-11-02 21:07:07.046 12167-12167/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onStart
+2021-11-02 21:07:07.046 12167-12167/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onResume
+
+• Po przejściu do drugiego pytania i obrót ekranu
+2021-11-02 21:07:42.255 12167-12167/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onPause
+2021-11-02 21:07:42.264 12167-12167/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onStop
+2021-11-02 21:07:42.265 12167-12167/com.example.quiz D/MainActivity: Została wywołana metoda: onSaveInstanceState
+2021-11-02 21:07:42.266 12167-12167/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onDestroy
+2021-11-02 21:07:42.315 12167-12167/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onCreate
+2021-11-02 21:07:42.377 12167-12167/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onStart
+2021-11-02 21:07:42.379 12167-12167/com.example.quiz D/MainActivity: Została wywołana metoda cyklu życia: onResume
+
+// po przejściu do 2 pytania i po obróceniu ekranu dalej było wyświetlone 2 pytanie
