@@ -1,5 +1,6 @@
 package com.example.quiz;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,6 +12,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int REQUEST_CODE_PROMPT = 0;
+
     private static final String QUIZ_TAG = "MainActivity";
     private static final String KEY_CURRENT_INDEX = "currentIndex";
     public static final String KEY_EXTRA_ANSWER = "correctAnswer";
@@ -21,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonHint;
 
     private TextView question;
+
+    private boolean answerWasShown;
 
     private final Question[] questions = new Question[] {
             new Question(R.string.q_uciski, true),
@@ -65,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, PromptActivity.class);
             boolean correctAnswer = questions[currentIndex].isAnswer();
             intent.putExtra(KEY_EXTRA_ANSWER, correctAnswer);
-            startActivity(intent);
+            startActivityForResult(intent, REQUEST_CODE_PROMPT);
         });
     }
 
@@ -88,6 +93,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode != RESULT_OK) { return; }
+        if (requestCode == REQUEST_CODE_PROMPT) {
+            if (data == null) { return; }
+            answerWasShown = data.getBooleanExtra(PromptActivity.KEY_EXTRA_ANSWER_SHOWN, false);
+        }
+    }
+
+    @Override
     protected void onStop() {
         super.onStop();
         Log.d(QUIZ_TAG, "Została wywołana metoda cyklu życia: onStop");
@@ -101,15 +116,23 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkAnswer(boolean userAnswer) {
 
-        if (userAnswer == questions[currentIndex].isAnswer()) {
-            Toast.makeText(this, "Poprawna odpowiedź!", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, R.string.answer_wrong, Toast.LENGTH_LONG).show();
+        int resultMessageId = 0;
+
+        if (answerWasShown) {
+            resultMessageId = R.string.answer_was_shown;
         }
+        else if (userAnswer == questions[currentIndex].isAnswer()) {
+            resultMessageId = R.string.answer_correct;
+        } else {
+            resultMessageId = R.string.answer_wrong;
+        }
+
+        Toast.makeText(this, resultMessageId, Toast.LENGTH_LONG).show();
     }
 
     private void setNextQuestion() {
         question.setText(questions[++currentIndex % questions.length].getId());
+        answerWasShown = false;
     }
 
     @Override

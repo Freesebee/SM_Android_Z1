@@ -17,5 +17,6 @@
 
     <string name="q_show_answer">Czy na pewno chcesz zobaczyć odpowiedź?</string>
     <string name="button_show_answer">Pokaż odpowiedź</string>
+    <string name="answer_was_shown">Oszukujesz! Odpowiedź była już wyświetlona.</string>
 
 </resources>
